@@ -29,7 +29,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 }
                 
             }
-            Debug.Log(speed);
+            //Debug.Log(speed);
 
         }
         if (Input.GetKeyUp(KeyCode.W))
@@ -50,7 +50,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 }
 
             }
-            Debug.Log(speed);
+            //Debug.Log(speed);
 
         }
         if (Input.GetKeyUp(KeyCode.S))
