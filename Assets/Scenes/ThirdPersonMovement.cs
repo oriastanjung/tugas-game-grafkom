@@ -9,9 +9,10 @@ public class ThirdPersonMovement : MonoBehaviour
     public float speed = 0f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
-   
+    public GameObject fuel;
+
     public float maxSpeed = 80f;
-   
+
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +20,14 @@ public class ThirdPersonMovement : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical"); // 1 = 'w' -1 = 's'
         //Debug.Log(vertical);
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        FuelLevel fuelObj = fuel.GetComponent("FuelLevel") as FuelLevel;
+
+        if (speed != 0)
+        {
+            fuelObj.fuelLevel -= 0.005f;
+
+        }
+        
         if (Input.GetKey(KeyCode.W))
         {   
             if(speed <= maxSpeed)
@@ -38,6 +47,7 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 speed = 0;
             }
+            
         }
 
         if (Input.GetKey(KeyCode.S))

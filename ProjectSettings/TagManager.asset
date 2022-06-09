@@ -8,6 +8,10 @@ TagManager:
   - SpawnPoint
   - TargetDeliverTag
   - DirectionArrowTag
+  - TimerTag
+  - TimeOutTag
+  - ScoreTag
+  - RefillFuelTag
   layers:
   - Default
   - TransparentFX
