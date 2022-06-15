@@ -13,6 +13,8 @@ public class StartDeliver : MonoBehaviour
     public Text scoreTextDisplay;
     public Text timeTextDisplay;
     public GameObject fuel;
+    public AudioSource paketSound;
+    public AudioSource isbenSound;
 
     private int score = 0;
     private int timeTMP;
@@ -35,6 +37,7 @@ public class StartDeliver : MonoBehaviour
         }
         if (bike.collider.tag == "RefillFuelTag")
         {
+            isbenSound.Play();
             Debug.Log(" bensin = 100%");
             FuelLevel fuelObj = fuel.GetComponent("FuelLevel") as FuelLevel;
             fuelObj.fuelLevel = 100.0f;
@@ -52,7 +55,7 @@ public class StartDeliver : MonoBehaviour
 
         if (bike.collider.tag == "TargetDeliverTag")
         {
-            
+            paketSound.Play();
             timeTMP = Int32.Parse(timeTextDisplay.text);
             score += timeTMP * 5 / 2;
 

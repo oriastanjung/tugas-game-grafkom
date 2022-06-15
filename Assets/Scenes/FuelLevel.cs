@@ -16,6 +16,7 @@ public class FuelLevel : MonoBehaviour
     public GameObject bike;
     public GameObject mainCamera;
     public GameObject backToMenuBtn;
+    public GameObject sound;
 
     public GameObject fuelBG;
 
@@ -34,6 +35,7 @@ public class FuelLevel : MonoBehaviour
             gameObject.SetActive(false);
             fuelBG.SetActive(false);
             backToMenuBtn.SetActive(true);
+            sound.SetActive(false);
         }
     }
 }

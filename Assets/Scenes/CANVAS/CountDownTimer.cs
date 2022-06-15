@@ -13,6 +13,7 @@ public class CountDownTimer : MonoBehaviour{
     public GameObject fuelBG;
     public GameObject fuel;
     public GameObject backToMenuBtn;
+    public GameObject sound;
 
     private void Start()
     {
@@ -38,6 +39,7 @@ public class CountDownTimer : MonoBehaviour{
             fuelLevel.gameObject.SetActive(false);
             fuelBG.SetActive(false);
             backToMenuBtn.SetActive(true);
+            sound.SetActive(false);
 
     }
 

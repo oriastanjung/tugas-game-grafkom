@@ -10,6 +10,10 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public GameObject fuel;
+    public AudioSource startEngineSound;
+    public AudioSource idleEngineSound;
+    public float idlePitch = 0.1f;
+    public AudioSource runEngineSound;
 
     public float maxSpeed = 80f;
 
@@ -24,19 +28,19 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (speed != 0)
         {
+            //runEngineSound.Play();
             fuelObj.fuelLevel -= 0.009f;
 
         }
-        
+
         if (Input.GetKey(KeyCode.W))
-        {   
-            if(speed <= maxSpeed)
+        {
+            if (speed <= maxSpeed)
             {
                 for (int i = 0; i < 1000; i++)
                 {
                     speed += 0.0001f;
                 }
-                
             }
             //Debug.Log(speed);
 
